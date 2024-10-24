@@ -1,0 +1,26 @@
+CREATE TABLE user (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+name TEXT NOT NULL
+);
+
+CREATE INDEX user_name ON user(name);
+
+INSERT INTO user VALUES (1, 'Иван Петров');
+
+all:
+SELECT * FROM user;
+
+user:
+SELECT * FROM user WHERE id=?;
+
+insert:
+INSERT INTO user(name) VALUES (?);
+
+add:
+INSERT INTO user VALUES ?;
+
+update:
+UPDATE user SET name=? WHERE id=?;
+
+delete:
+DELETE FROM user WHERE id=?;
